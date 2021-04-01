@@ -1,5 +1,5 @@
 print("In pointed main.py file")
-print("onstart v2 v2 v2 !!!!!!")
+#print("onstart v2 v2 v2 !!!!!!")
 def connectToWifiAndUpdate():
     import time, machine, network, gc
     #import app.secrets as secrets
@@ -18,7 +18,8 @@ def connectToWifiAndUpdate():
             print("wifi connection not successful yet")
             pass
     print('network config:', sta_if.ifconfig())
-    otaUpdater = OTAUpdater('https://github.com/rdehuyss/micropython-ota-updater', main_dir='app', secrets_file="secrets.py")
+    #otaUpdater = OTAUpdater('https://github.com/FalconBFR/esp32otatestv3', main_dir='app', secrets_file="secrets.py")
+    otaUpdater = OTAUpdater('https://github.com/FalconBFR/esp32otatestv3', main_dir='app')
     hasUpdated = otaUpdater.install_update_if_available()
     if hasUpdated:
         print("update success")
